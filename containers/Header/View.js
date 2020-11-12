@@ -1,5 +1,39 @@
 import React from "react";
 import styled from "styled-components";
+
+export default function HeaderView() {
+  return (
+    <Header>
+      <Inner>
+        <Desktop>
+          <NavigationList>
+            <List>
+              <ListElement>
+                <Link href="">Магазины</Link>
+              </ListElement>
+              <ListGoods>
+                <Link href="">Товары</Link>
+              </ListGoods>
+              <ListElement>
+                <Link href="">Остальное</Link>
+              </ListElement>
+            </List>
+          </NavigationList>
+          <ListRegistration>
+            <List>
+              <ListElement>
+                <Link href="">Вход</Link>
+              </ListElement>
+              <ListRegistrationElement>
+                <Link href="">Регистрация</Link>
+              </ListRegistrationElement>
+            </List>
+          </ListRegistration>
+        </Desktop>
+      </Inner>
+    </Header>
+  );
+}
 const Header = styled.header``;
 const Inner = styled.div`
   display: flex;
@@ -50,36 +84,3 @@ const ListRegistrationElement = styled.li`
   }
 `;
 const Link = styled.a``;
-export default function HeaderView() {
-  return (
-    <Header>
-      <Inner>
-        <Desktop>
-          <NavigationList>
-            <List>
-              <ListElement>
-                <Link href="">Магазины</Link>
-              </ListElement>
-              <ListGoods>
-                <Link href="">Товары</Link>
-              </ListGoods>
-              <ListElement>
-                <Link href="">Остальное</Link>
-              </ListElement>
-            </List>
-          </NavigationList>
-          <ListRegistration>
-            <List>
-              <ListElement>
-                <Link href="">Вход</Link>
-              </ListElement>
-              <ListRegistrationElement>
-                <Link href="">Регистрация</Link>
-              </ListRegistrationElement>
-            </List>
-          </ListRegistration>
-        </Desktop>
-      </Inner>
-    </Header>
-  );
-}

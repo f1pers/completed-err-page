@@ -1,7 +1,46 @@
 import React from "react";
 import Vector from "next/image";
 import styled from "styled-components";
-const Qq = styled.div`
+export default function FilterView() {
+  return (
+    <div>
+      <Wrapper>
+        <WrapperPosition>
+          <Menu>
+            <CategoriesAndPopular>
+              <Link href="">
+                <Categories>
+                  <CategoriesName>Категории</CategoriesName>
+                  <Link href="">
+                    <ListIcon>
+                      <TopLine></TopLine>
+                      <MiddleLine></MiddleLine>
+                      <BottomLine></BottomLine>
+                    </ListIcon>
+                  </Link>
+                </Categories>
+              </Link>
+              <Link href="">
+                <Popular>
+                  <PopularText>Популярные</PopularText>
+                  <Link href="">
+                    <Paragraph>
+                      <ArrowDown></ArrowDown>
+                    </Paragraph>
+                  </Link>
+                </Popular>
+              </Link>
+            </CategoriesAndPopular>
+            <div>
+              <SearchField type="search" placeholder="Поиск по названию" />
+            </div>
+          </Menu>
+        </WrapperPosition>
+      </Wrapper>
+    </div>
+  );
+}
+const Wrapper = styled.div`
   padding-top: 40px;
   display: flex;
   justify-content: center;
@@ -71,12 +110,12 @@ const Popular = styled.div`
   justify-content: center;
   margin-left: 8px;
 `;
-const PopularTxt = styled.span`
+const PopularText = styled.span`
   font-size: 16px;
   font-family: Segoe UI;
   color: #7e869d;
 `;
-const Prgph = styled.p``;
+const Paragraph = styled.p``;
 const ArrowDown = styled.i`
   border: solid#7E869D;
   border-width: 0 2px 2px 0;
@@ -112,42 +151,3 @@ const SearchField = styled.input`
     border-color: #d6def5;
   }
 `;
-export default function FilterView() {
-  return (
-    <div>
-      <Qq>
-        <WrapperPosition>
-          <Menu>
-            <CategoriesAndPopular>
-              <Link href="">
-                <Categories>
-                  <CategoriesName>Категории</CategoriesName>
-                  <Link href="">
-                    <ListIcon>
-                      <TopLine></TopLine>
-                      <MiddleLine></MiddleLine>
-                      <BottomLine></BottomLine>
-                    </ListIcon>
-                  </Link>
-                </Categories>
-              </Link>
-              <Link href="">
-                <Popular>
-                  <PopularTxt>Популярные</PopularTxt>
-                  <Link href="">
-                    <Prgph>
-                      <ArrowDown></ArrowDown>
-                    </Prgph>
-                  </Link>
-                </Popular>
-              </Link>
-            </CategoriesAndPopular>
-            <div>
-              <SearchField type="search" placeholder="Поиск по названию" />
-            </div>
-          </Menu>
-        </WrapperPosition>
-      </Qq>
-    </div>
-  );
-}
